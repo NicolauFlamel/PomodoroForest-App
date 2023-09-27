@@ -41,3 +41,11 @@ O app possui as seguintes funcionalidades a serem desenvolvidas:
 # Tela da Floresta (Garden)
 - Ver plantas e árvores plantadas.
 - Plantar árvores obitdas no pomodoro (será implementado quando houver funcionalidades).
+
+---
+# Instalação
+
+- Certifique-se que o `Dart SDK` esteja na versão `3.1.0` e o `Flutter` na versão `3.13.2`.
+- Importe o projeto para sua IDE de prefência (certifique-se de que o Flutter e o Dart estejam configurados para a execução do projeto).
+- Abra o `pubspec.yaml` e certifique-se de que as dependencias tenham sido baixadas.
+- Execute o app em um emulador ou no seu smartphone.
