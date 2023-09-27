@@ -45,4 +45,7 @@ O app possui as seguintes funcionalidades a serem desenvolvidas:
 ---
 # Instalação
 
-- Certifique-se que o `Dart SDK` esteja na versão `3.1.0`
+- Certifique-se que o Dart SDK esteja na versão 3.1.0 e o Flutter na versão 3.13.2.
+- Importe o projeto para sua IDE de prefência (certifique-se que o Flutter e o Dart estejam configurados para a execução do projeto).
+- Abra o ~pubspec.yaml~ e certifique-se que as dependencias foram baixadas.
+- Execute o app em um emulador ou no seu smartphone.
