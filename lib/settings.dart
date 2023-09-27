@@ -49,7 +49,7 @@ class SettingsPage extends StatelessWidget {
                 style: TextStyle(fontSize: 16),
               ),
               onTap: () {
-                // Navigate to the change username screen (not implemented here)
+                // implementar
               },
             ),
             Divider(), 

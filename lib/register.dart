@@ -42,7 +42,7 @@ class RegistrationPage extends StatelessWidget {
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
-                // Implement registration logic here
+                // Implementar
               },
               style: ElevatedButton.styleFrom(
                 primary: const Color.fromRGBO(81, 163, 135, 1),
@@ -52,7 +52,6 @@ class RegistrationPage extends StatelessWidget {
             SizedBox(height: 16.0),
             TextButton(
               onPressed: () {
-                // Navigate to the login screen
                 Navigator.of(context).pop();
               },
               child: Text('Já possui uma conta? Login'),

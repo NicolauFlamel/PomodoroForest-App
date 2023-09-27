@@ -63,9 +63,9 @@ class ShopPage extends StatelessWidget {
       body: GridView.builder(
         padding: EdgeInsets.all(16.0),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, // Two items per row
-          crossAxisSpacing: 16.0, // Spacing between columns
-          mainAxisSpacing: 16.0, // Spacing between rows
+          crossAxisCount: 2, 
+          crossAxisSpacing: 16.0, 
+          mainAxisSpacing: 16.0, 
         ),
         itemCount: items.length,
         itemBuilder: (context, index) {
@@ -97,7 +97,7 @@ class ShopItemCard extends StatelessWidget {
    @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(40.0), // Rounded edges
+      borderRadius: BorderRadius.circular(40.0), 
       child: Card(
         elevation: 4.0,
         child: Column(
