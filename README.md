@@ -1,5 +1,5 @@
 # The Project
-A mobile app created for a college subject exam. It is inspired on Forest App which is an application that allows you to grow plants and trees when you do pomodoro sessions. 
+A mobile app created for a college subject assignment. It is inspired on Forest App which is an application that allows you to grow plants and trees when you do pomodoro sessions. 
 
 > **_NOTE:_**  This app has no commercial use and its purpose is entirely educational.
 
