@@ -37,6 +37,7 @@ O app possui as seguintes funcionalidades a serem desenvolvidas:
 - Ver quantidade de moedas disponíveis;
 - Comprar plantas e árvores (será implementado quando houver funcionalidades).
 
+---
 # Tela da Floresta (Garden)
 - Ver plantas e árvores plantadas.
 - Plantar árvores obitdas no pomodoro (será implementado quando houver funcionalidades).
