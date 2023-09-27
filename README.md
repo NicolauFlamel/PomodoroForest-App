@@ -41,3 +41,8 @@ O app possui as seguintes funcionalidades a serem desenvolvidas:
 # Tela da Floresta (Garden)
 - Ver plantas e árvores plantadas.
 - Plantar árvores obitdas no pomodoro (será implementado quando houver funcionalidades).
+
+---
+# Instalação
+
+- Certifique-se que o `Dart SDK` esteja na versão `3.1.0`
