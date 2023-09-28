@@ -4,6 +4,11 @@ A mobile app created for a college subject assignment. It is inspired on Forest 
 > **_NOTE:_**  This app has no commercial use and its purpose is entirely educational.
 
 ---
+# Mockups:
+<img src="/assets/102603763/9fd14916-4015-4f35-8e58-9351ebe49995" alt=“mockup-1” width=200 height=200>
+
+
+---
 # PomodoroForest App
 
 Esse aplicativo foi baseado e criado a partir do Forest App, uma aplicação que permite o usuário fazer sessões de pomodoro e plantar árvores com seu sucesso. No momento, somentes as telas foram criadas e suas rotas entre si (a implementação será feita em um estágio futuro).
