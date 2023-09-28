@@ -5,7 +5,7 @@ A mobile app created for a college subject assignment. It is inspired on Forest 
 
 ---
 # Mockups:
-<img src="/assets/102603763/9fd14916-4015-4f35-8e58-9351ebe49995" alt=“mockup-1” width=200 height=200>
+<img src="Mockups\Mockup 1.png" alt=“mockup-1” width=200 height=400> <img src="Mockups\Mockup 2.png" alt=“mockup-2” width=200 height=400> <img src="Mockups\Mockup 3.png" alt=“mockup-3” width=200 height=400> <img src="Mockups\Mockup 4.png" alt=“mockup-4” width=200 height=400>
 
 
 ---
