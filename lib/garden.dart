@@ -13,7 +13,7 @@ class _GardenScreenState extends State<GardenScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Floresta'),
+        title: Text('Visão Geral'),
         backgroundColor: const Color.fromRGBO(81, 163, 135, 1),
       ),
       body: GridView.builder(
