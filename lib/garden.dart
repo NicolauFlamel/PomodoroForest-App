@@ -54,17 +54,7 @@ class _GardenScreenState extends State<GardenScreen> {
             ); 
           }
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          
-          setState(() {
-            _gardenService.addTree('New Plant', 'assets/tree.png');
-          });
-        },
-        child: Icon(Icons.add),
-        backgroundColor: const Color.fromRGBO(81, 163, 135, 1),
-      ),
+      ), 
     );
   }
 }
