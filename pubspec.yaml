@@ -36,6 +36,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
+  cloud_firestore: ^4.12.0
+
+  provider: ^5.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -64,6 +68,7 @@ flutter:
     - assets/pine.png
     - assets/birch.png
     - assets/figo.png
+    - assets/oak_sapling.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

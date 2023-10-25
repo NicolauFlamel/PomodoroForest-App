@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'garden_service.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:async';
 
 class GardenScreen extends StatefulWidget {
   @override
@@ -6,7 +9,7 @@ class GardenScreen extends StatefulWidget {
 }
 
 class _GardenScreenState extends State<GardenScreen> {
-  List<Plant> plants = [];
+  final GardenService _gardenService = GardenService();
 
   @override
   Widget build(BuildContext context) {
@@ -16,29 +19,51 @@ class _GardenScreenState extends State<GardenScreen> {
         title: Text('Visão Geral'),
         backgroundColor: const Color.fromRGBO(81, 163, 135, 1),
       ),
-      body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-        ),
-        itemCount: plants.length,
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              //implementar 
-            },
-            child: PlantTile(
-              plant: plants[index],
-            ),
-          );
+      body: StreamBuilder(
+        stream: _gardenService.getTrees(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return CircularProgressIndicator(); 
+          } else if (snapshot.hasError) {
+            return Text('Error: ${snapshot.error}');
+          } else if (!snapshot.hasData) {
+            return Text('No data available');
+          } else {
+            List<QueryDocumentSnapshot> trees = snapshot.data as List<QueryDocumentSnapshot>;
+
+           return GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+              ),
+              itemCount: trees.length,
+              itemBuilder: (context, index) {
+                final data = trees[index].data() as Map<String, dynamic>;
+
+                return GestureDetector(
+                  onTap: () {
+                    // Implementar interação
+                  },
+                  child: PlantTile(
+                    plant: Plant(
+                      name: data['name'] ?? 'Unknown',
+                      imageAsset: data['imageAsset'] ?? 'assets/default_tree.png',
+                    ),
+                  ),
+                );
+              },
+            ); 
+          }
         },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          
           setState(() {
-            plants.add(Plant(name: 'New Plant', imageAsset: 'assets/tree.png'));
+            _gardenService.addTree('New Plant', 'assets/tree.png');
           });
         },
-        child: Icon(Icons.add), backgroundColor: const Color.fromRGBO(81, 163, 135, 1),
+        child: Icon(Icons.add),
+        backgroundColor: const Color.fromRGBO(81, 163, 135, 1),
       ),
     );
   }

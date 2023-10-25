@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "902621743147",
+    "project_id": "pomodoro-forest-app-55bdb",
+    "storage_bucket": "pomodoro-forest-app-55bdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902621743147:android:b15852a67d7e6c2ec6826e",
+        "android_client_info": {
+          "package_name": "com.example.pomodorforest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzVUc_5U-iVQU3zxOOxnfwXBmhC195n3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

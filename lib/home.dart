@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'garden_service.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:async';
 
 class PomodoroPage extends StatefulWidget {
@@ -13,7 +15,29 @@ class _PomodoroPageState extends State<PomodoroPage> {
   bool _isRunning = false;
   late Timer _timer;
 
+  String _treeName = 'Your Tree Name';
+  String _treeImageAsset = 'assets/your_tree_image.png';
+
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final CollectionReference gardenCollection =
+      FirebaseFirestore.instance.collection('Garden-Trees');
+
+  final GardenService _gardenService = GardenService();
+
+  void _stopTimer() {
+    if (_isRunning) {
+      _timer.cancel();
+      _isRunning = false;
+      _addTreeToGarden();
+    }
+  }
+
+  void _addTreeToGarden() {
+    String name = _treeName; 
+    String imageAsset = _treeImageAsset; 
+    _gardenService.addTree(name, imageAsset);
+  }
 
   void _startTimer() {
     if (!_isRunning) {
@@ -34,16 +58,9 @@ class _PomodoroPageState extends State<PomodoroPage> {
     }
   }
 
-  void _stopTimer() {
-    if (_isRunning) {
-      _timer.cancel();
-      _isRunning = false;
-    }
-  }
-
   void _resetTimer() {
     setState(() {
-      _minutes = 25;
+      _minutes = 20;
       _seconds = 0;
       if (_isRunning) {
         _timer.cancel();
@@ -54,6 +71,14 @@ class _PomodoroPageState extends State<PomodoroPage> {
 
   @override
   Widget build(BuildContext context) {
+    if (_minutes > 20) {
+      _treeName = 'Oak Sapling';
+      _treeImageAsset = 'assets/oak_sapling.png';
+    } else if(_minutes > 15 && _minutes < 20) {
+      _treeName = 'Log';
+      _treeImageAsset = 'assets/wood.png';
+    }
+
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -114,7 +139,7 @@ class _PomodoroPageState extends State<PomodoroPage> {
                 ),
                 child: Center(
                   child: Image.asset(
-                    'assets/wood.png',
+                    _treeImageAsset, 
                     width: 150,
                     height: 150,
                   ),
@@ -122,7 +147,7 @@ class _PomodoroPageState extends State<PomodoroPage> {
               ),
               Container(
                 width: 180,
-                height: 180, 
+                height: 180,
                 child: CircularProgressIndicator(
                   value: (_minutes * 60 + _seconds) / (25 * 60),
                   backgroundColor:
@@ -130,9 +155,9 @@ class _PomodoroPageState extends State<PomodoroPage> {
                   valueColor: AlwaysStoppedAnimation<Color>(
                     Color.fromARGB(255, 139, 137, 4),
                   ),
-                  strokeWidth: 10, 
+                  strokeWidth: 10,
                 ),
-              )
+              ),
             ],
           ),
           SizedBox(height: 20),
@@ -172,12 +197,12 @@ class _PomodoroPageState extends State<PomodoroPage> {
         ],
       ),
       drawer: Drawer(
-        width: 200, 
+        width: 200,
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
             Container(
-              height: 100, 
+              height: 100,
               decoration: BoxDecoration(
                 color: const Color.fromRGBO(81, 163, 135, 1),
               ),
@@ -196,7 +221,7 @@ class _PomodoroPageState extends State<PomodoroPage> {
               leading: Icon(Icons.settings),
               title: Text('Configurações'),
               onTap: () {
-                Navigator.pushNamed(context, '/home/settings');                
+                Navigator.pushNamed(context, '/home/settings');
               },
             ),
             ListTile(
