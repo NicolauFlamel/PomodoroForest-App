@@ -11,13 +11,13 @@ A mobile app created for a college subject assignment. It is inspired on Forest 
 ---
 # PomodoroForest App
 
-Esse aplicativo foi baseado e criado a partir do Forest App, uma aplicação que permite o usuário fazer sessões de pomodoro e plantar árvores com seu sucesso. No momento, somentes as telas foram criadas e suas rotas entre si (a implementação será feita em um estágio futuro).
+Esse aplicativo foi baseado e criado a partir do Forest App, uma aplicação que permite o usuário fazer sessões de pomodoro e plantar árvores com seu sucesso. No momento, as telas, rotas e a integração com firebase foram criadas (lista de funcionalidades já implementadas ou não segue abaixo).
 
 ---
 O app possui as seguintes funcionalidades a serem desenvolvidas:
 
 # Tela de Login (login)
-- Login;
+- Login (autenticação será implementada);
 - Redirecionar para tela de cadastro.
 
 ---
@@ -26,15 +26,16 @@ O app possui as seguintes funcionalidades a serem desenvolvidas:
 - Redirecionar para tela de login.
 
 ---
-# Tela Home (Home)
-- Gerenciar sessões de pomodoro;
-- Ver moedas obtidas;
+# Tela Home (home)
+- Gerenciar sessões de pomodoro (será implementado a opção de escolher qual broto plantar);
+- Ver moedas obtidas (obtenção de moedas será implementada);
 - Menu drawer para cessar configurações, loja, floresta e dar logout.
 
 ---
 # Tela de Configurações (settings)
 - Renomear nome de usuário;
 - Redefinir senha;
+- Limpar floresta;
 - Outras opções serão implementadas quando houver funcionalidades.
 
 ---
@@ -43,9 +44,9 @@ O app possui as seguintes funcionalidades a serem desenvolvidas:
 - Comprar plantas e árvores (será implementado quando houver funcionalidades).
 
 ---
-# Tela da Floresta (Garden)
+# Tela da Floresta (garden)
 - Ver plantas e árvores plantadas.
-- Plantar árvores obitdas no pomodoro (será implementado quando houver funcionalidades).
+- Plantar árvores obtidas no pomodoro.
 
 ---
 # Instalação
