@@ -17,31 +17,31 @@ Esse aplicativo foi baseado e criado a partir do Forest App, uma aplicação que
 O app possui as seguintes funcionalidades a serem desenvolvidas:
 
 # Tela de Login (login)
-- Login (autenticação será implementada);
+- Login;
 - Redirecionar para tela de cadastro.
 
 ---
 # Tela de Cadastro (register)
-- Cadastrar uma conta (será implementada quando houver autenticação);
+- Cadastrar uma conta;
 - Redirecionar para tela de login.
 
 ---
 # Tela Home (home)
-- Gerenciar sessões de pomodoro (será implementado a opção de escolher qual broto plantar);
-- Ver moedas obtidas (obtenção de moedas será implementada);
+- Gerenciar sessões de pomodoro;
+- Ver moedas obtidas (ganho de moedas não implementado já que não está linkado com a conta);
 - Menu drawer para cessar configurações, loja, floresta e dar logout.
 
 ---
 # Tela de Configurações (settings)
-- Renomear nome de usuário;
-- Redefinir senha;
+- Renomear nome de usuário (Não foi implementado);
+- Redefinir senha (Não foi implementado);
 - Limpar floresta;
 - Outras opções serão implementadas quando houver funcionalidades.
 
 ---
 # Tela da Loja (shop)
 - Ver quantidade de moedas disponíveis;
-- Comprar plantas e árvores (será implementado quando houver funcionalidades).
+- Comprar plantas e árvores (não foi implementado).
 
 ---
 # Tela da Floresta (garden)

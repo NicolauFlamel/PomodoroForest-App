@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -36,12 +37,41 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  void _handleLogin(BuildContext context) {
-    String username = _usernameController.text;
+  Future<void> _handleLogin(BuildContext context) async {
+    String email = _usernameController.text;
     String password = _passwordController.text;
-    print('Username: $username');
-    print('Password: $password');
-    Navigator.pushNamed(context, '/home');
+
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+      Navigator.pushNamed(context, '/home');
+    } catch (e) {
+      print('Login error: $e');
+      String errorMessage = 'Erro no login. Verifique suas credenciais e tente novamente.';
+      if (e is FirebaseAuthException) {
+        if (e.code == 'user-not-found') {
+          errorMessage = 'Usuário não encontrado. Verifique suas credenciais e tente novamente.';
+        } else if (e.code == 'wrong-password') {
+          errorMessage = 'Senha incorreta. Verifique suas credenciais e tente novamente.';
+        }
+      }
+      _showErrorSnackbar(context, errorMessage);
+    }
+  }
+
+  void _showErrorSnackbar(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.red,
+      ),
+    );
   }
 
   @override
@@ -54,7 +84,7 @@ class _LoginFormState extends State<LoginForm> {
           TextField(
             controller: _usernameController,
             decoration: InputDecoration(
-              labelText: 'Usuário',
+              labelText: 'Email',
               enabledBorder: _inputBorder(),
               focusedBorder: _inputBorder(),
             ),
