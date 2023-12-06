@@ -31,11 +31,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
           password: password,
         );
 
-        // Registration successful, navigate to the home page or handle accordingly
         Navigator.pushNamed(context, '/home');
       } catch (e) {
         print('Registration error: $e');
-        // Handle registration error, e.g., show an error message to the user
         if (e is FirebaseAuthException) {
           if (e.code == 'weak-password') {
             setState(() {

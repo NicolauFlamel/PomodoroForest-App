@@ -11,15 +11,15 @@ class PomodoroPage extends StatefulWidget {
 }
 
 class _PomodoroPageState extends State<PomodoroPage> {
-  int _selectedDuration = 25; // Default timer duration
+  int _selectedDuration = 25;
   int _minutes = 25;
   int _seconds = 0;
   int _coins = 0;
   bool _isRunning = false;
   late Timer _timer;
 
-  String _treeName = 'Your Tree Name';
-  String _treeImageAsset = 'assets/your_tree_image.png';
+  String _treeName = 'Oak';
+  String _treeImageAsset = 'assets/oak_sapling.png';
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -69,7 +69,7 @@ class _PomodoroPageState extends State<PomodoroPage> {
   void _startTimer() {
     if (!_isRunning) {
       int totalSeconds = _selectedDuration * 60;
-      int stageDuration = totalSeconds ~/ 3; // Duration for each stage
+      int stageDuration = totalSeconds ~/ 3; 
 
       _timer = Timer.periodic(Duration(seconds: 1), (timer) {
         setState(() {
